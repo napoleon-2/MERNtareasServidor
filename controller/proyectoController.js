@@ -32,6 +32,7 @@ exports.obtenerProyectos = async (req, res) => {
     try {
         const proyectos = await Proyecto.find({ creador: req.usuario.id }).sort({ creado: -1});
         res.json({ proyectos });
+        //console.log(proyectos)
     } catch (error) {
         console.log(error)
         res.status(500).send('Hubo un error');
@@ -48,7 +49,7 @@ exports.actualizarProyecto = async(req, res) => {
       }
       //extraer la informacion del proyecto
       const { nombre } = req.body;
-      const nuevoProyecto = {};
+      const nuevoProyecto = {}; 
 
       if(nombre) {
           nuevoProyecto.nombre = nombre; 
@@ -93,4 +94,4 @@ exports.eliminarProyecto = async (req, res) => {
         console.log(error);
         res.status(500).send('Error en el servidor')       
     }
-}
+} //255

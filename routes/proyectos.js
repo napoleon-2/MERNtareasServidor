@@ -11,7 +11,7 @@ router.post('/',
     [
         check('nombre', 'El nombre del proyecto es obligatorio').not().isEmpty()
     ],
-    proyectoController.crearProyecto
+    proyectoController.crearProyecto 
 );
 //obtener todos los proyectos
 router.get('/',
